@@ -271,6 +271,8 @@
 $(document).ready(function () {
   nameflag = 0;
   mailflag = 0;
+  subjectflag=0;
+  messageflag=0;
 
 
   $("#name").blur(function () {
@@ -286,7 +288,7 @@ $(document).ready(function () {
         $("#namelengtherror").hide();
         $("#namevaliderror").hide();
         nameflag = 1;
-        if (mailflag == 1) {
+        if (mailflag == 1 && messageflag==1 && subjectflag==1) {
           $("#send-btn").prop("disabled", false);
         }
       }
@@ -305,7 +307,7 @@ $(document).ready(function () {
     if (validmail.test(mail)) {
       $("#emailerror").hide();
       mailflag = 1;
-      if (nameflag == 1) {
+      if (nameflag == 1 && messageflag==1 && subjectflag==1) {
         $("#send-btn").prop("disabled", false);
       }
     }
@@ -313,6 +315,34 @@ $(document).ready(function () {
       $("#emailerror").show();
       mailflag = 0;
       $("#send-btn").prop("disabled", true);
+    }
+  })
+  $("#subject").blur(function(){
+    if($(this).val()<8){
+      $("#subjecterror").show();
+      subjectflag=0;
+      $("#send-btn").prop("disabled", true);
+    }
+    else{
+      $("#subjecterror").hide();
+      subjectflag=1;
+      if(nameflag == 1 && messageflag==1 && mailflag==1){
+        $("#send-btn").prop("disabled", false);
+      }
+    }
+  })
+  $("#message").blur(function(){
+    if($(this).val()<10){
+      $("#messageerror").show();
+      messageflag=0;
+      $("#send-btn").prop("disabled", true);
+    }
+    else{
+      $("#messageerror").hide();
+      messageflag=1;
+      if(nameflag == 1 && subjectflag==1 && mailflag==1){
+        $("#send-btn").prop("disabled", false);
+      }
     }
   })
 })
