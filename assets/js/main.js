@@ -345,6 +345,30 @@ $(document).ready(function () {
       }
     }
   })
+  $("#send-btn").hover(function(){
+    uname=$("#name").val();
+    mail = $("#email").val();
+    subject = $("#subject").val();
+    message = $("#message").val();
+    if(uname.length==0){
+      
+      $("#namelengtherror").show();
+    }
+    
+    else if(mail.length==0){
+      
+      $("#emailerror").show();
+    }
+    else if(subject==0){
+      
+      $("#subjecterror").show();
+    }
+    else if(message.length==0){
+      
+      $("#messageerror").show();
+    }
+    
+  })
 })
 
 
