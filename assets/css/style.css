@@ -520,10 +520,7 @@ section {
   margin-bottom: 0;
 }
 
-.about .container .display-pic{
-  border: 3px solid #34b7a7;
-  padding: 0;
-}
+
 
 /*--------------------------------------------------------------
 # Skills
@@ -1057,7 +1054,6 @@ section {
   color: #222222;
   font-size: 14px;
   text-align: center;
-  margin-top: 203px;
 }
 
 #footer .credits {
@@ -1067,4 +1063,8 @@ section {
 
 #footer .credits a {
   color: #34b7a7;
+}
+
+.contact-div{
+  margin-bottom: 204px;
 }
