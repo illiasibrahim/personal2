@@ -355,15 +355,15 @@ $(document).ready(function () {
       $("#namelengtherror").show();
     }
     
-    else if(mail.length==0){
+    if(mail.length==0){
       
       $("#emailerror").show();
     }
-    else if(subject==0){
+    if(subject==0){
       
       $("#subjecterror").show();
     }
-    else if(message.length==0){
+    if(message.length==0){
       
       $("#messageerror").show();
     }
